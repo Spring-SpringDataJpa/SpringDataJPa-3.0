@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.2'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.demo.react'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+	//spring-boot-starter-data-jpa' will suuport for reactivecrudrepository, use spring-boot-starter-data-r2dbc instead
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.2.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
+//	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.12.2'
+
+	//For reactive we must use io.r2dbc:r2dbc-h2 instead of com.h2database:h2
+	implementation 'io.r2dbc:r2dbc-h2'
+//	runtimeOnly 'com.h2database:h2'
+//	implementation  'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//testing libraries
+//	testImplementation 'org.assertj:assertj-core:3.25.2'
+	testImplementation 'org.assertj:assertj-core:3.8.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
