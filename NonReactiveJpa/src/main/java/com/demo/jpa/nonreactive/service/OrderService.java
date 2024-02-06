@@ -22,6 +22,19 @@ public class OrderService {
     private OrderItemRepository orderItemRepository;
 
     public Order createOrder(Order order) {
+//        List<OrderItem> orderItemsTemp = new ArrayList<>();
+//        List<OrderItem> orderItems = order.getOrderItems();
+//        for (OrderItem item : orderItems) {
+////            item.setOrder(order);
+//            orderItemsTemp.add(item);
+//        }
+//        order.setOrderItems(orderItemsTemp);
+
+        List<OrderItem> orderItems = order.getOrderItems();
+        for (OrderItem item : orderItems) {
+            item.setOrder(order);
+        }
+        order.setOrderItems(orderItems);
         return orderRepository.save(order);
     }
 
