@@ -10,11 +10,20 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  Default fetch types in various relationship types:
+ *  One-to-One - Eager
+ *  One-to-Many  - Lazy
+ *  Many-to-One - Eager
+ *  Many-to-Many - Lazy
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
 @Entity(name = "CustomerOrder")
+@NamedEntityGraph(name = "Order.orderItems",
+        attributeNodes = @NamedAttributeNode("orderItems"))
 public class Order {
 
     @Id

@@ -20,6 +20,8 @@ public class OrderItem {
 
     private String productName;
     private Double price;
+
+    @Basic(fetch = FetchType.LAZY)
     private Integer quantity;
 
     /**
