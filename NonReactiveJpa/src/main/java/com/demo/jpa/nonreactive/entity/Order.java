@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @Builder
-@Entity
+@Entity(name = "CustomerOrder")
 public class Order {
 
     @Id
@@ -27,6 +27,5 @@ public class Order {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private Set<OrderItem> orderItems = new HashSet<>();
 
-    // Getters, setters, and constructors omitted for brevity
 }
 

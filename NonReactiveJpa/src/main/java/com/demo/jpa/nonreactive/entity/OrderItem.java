@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-@Entity
+@Entity (name = "OrderItem")
 public class OrderItem {
 
     @Id
@@ -25,5 +25,4 @@ public class OrderItem {
     @JoinColumn(name = "order_id")
     private Order order;
 
-    // Getters, setters, and constructors omitted for brevity
 }

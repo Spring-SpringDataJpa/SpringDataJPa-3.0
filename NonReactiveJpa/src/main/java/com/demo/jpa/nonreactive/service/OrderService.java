@@ -5,25 +5,28 @@ import com.demo.jpa.nonreactive.entity.OrderItem;
 import com.demo.jpa.nonreactive.exception.ResourceNotFoundException;
 import com.demo.jpa.nonreactive.repository.OrderItemRepository;
 import com.demo.jpa.nonreactive.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class OrderService {
 
-    private final OrderRepository orderRepository;
-    private final OrderItemRepository orderItemRepository;
+    @Autowired
+    private OrderRepository orderRepository;
 
     @Autowired
-    public OrderService(OrderRepository orderRepository, OrderItemRepository orderItemRepository) {
-        this.orderRepository = orderRepository;
-        this.orderItemRepository = orderItemRepository;
-    }
+    private OrderItemRepository orderItemRepository;
 
     public Order createOrder(Order order) {
         return orderRepository.save(order);
+    }
+
+    public List<Order> getAllOrder() {
+        return orderRepository.findAll();
     }
 
     public Order getOrderById(Long id) {
@@ -70,4 +73,6 @@ public class OrderService {
         orderRepository.findById(orderId).ifPresent(order -> order.getOrderItems().remove(orderItem));
         orderItemRepository.deleteById(orderItemId);
     }
+
+
 }

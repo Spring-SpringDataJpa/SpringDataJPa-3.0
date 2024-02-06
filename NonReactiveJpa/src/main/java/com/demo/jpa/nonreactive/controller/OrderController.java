@@ -10,57 +10,59 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/orders")
+//@RequiredArgsConstructor
 public class OrderController {
 
-    private final OrderService orderService;
-
     @Autowired
-    public OrderController(OrderService orderService) {
-        this.orderService = orderService;
-    }
+    private OrderService orderService;
 
     @PostMapping
     public Order createOrder(@RequestBody Order order) {
         return orderService.createOrder(order);
     }
 
+    @GetMapping
+    public List<Order> getAllOrder() {
+        return orderService.getAllOrder();
+    }
+
     @GetMapping("/{id}")
-    public Order getOrderById(@PathVariable Long id) {
+    public Order getOrderById(@PathVariable("id") Long id) {
         return orderService.getOrderById(id);
     }
 
     @PutMapping("/{id}")
-    public Order updateOrder(@PathVariable Long id, @RequestBody Order order) {
+    public Order updateOrder(@PathVariable("id") Long id, @RequestBody Order order) {
         return orderService.updateOrder(id, order);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteOrder(@PathVariable Long id) {
+    public void deleteOrder(@PathVariable("id") Long id) {
         orderService.deleteOrder(id);
     }
 
     @GetMapping("/{id}/items")
-    public List<OrderItem> getOrderItemsByOrderId(@PathVariable Long id) {
+    public List<OrderItem> getOrderItemsByOrderId(@PathVariable("id") Long id) {
         return orderService.getOrderItemsByOrderId(id);
     }
 
     @PostMapping("/{orderId}/items")
-    public OrderItem createOrderItem(@PathVariable Long orderId, @RequestBody OrderItem orderItem) {
+    public OrderItem createOrderItem(@PathVariable("orderId") Long orderId, @RequestBody OrderItem orderItem) {
         return orderService.createOrderItem(orderId, orderItem);
     }
 
     @GetMapping("/{orderId}/items/{itemId}")
-    public OrderItem getOrderItemById(@PathVariable Long orderId, @PathVariable Long itemId) {
+    public OrderItem getOrderItemById(@PathVariable("orderId") Long orderId, @PathVariable("itemId") Long itemId) {
         return orderService.getOrderItemById(orderId, itemId);
     }
 
     @PutMapping("/{orderId}/items/{itemId}")
-    public OrderItem updateOrderItem(@PathVariable Long orderId, @PathVariable Long itemId, @RequestBody OrderItem orderItem) {
+    public OrderItem updateOrderItem(@PathVariable("orderId") Long orderId, @PathVariable("itemId") Long itemId, @RequestBody OrderItem orderItem) {
         return orderService.updateOrderItem(orderId, itemId, orderItem);
     }
 
     @DeleteMapping("/{orderId}/items/{itemId}")
-    public void deleteOrderItem(@PathVariable Long orderId, @PathVariable Long itemId) {
+    public void deleteOrderItem(@PathVariable("orderId") Long orderId, @PathVariable("itemId") Long itemId) {
         orderService.deleteOrderItem(orderId, itemId);
     }
 }
