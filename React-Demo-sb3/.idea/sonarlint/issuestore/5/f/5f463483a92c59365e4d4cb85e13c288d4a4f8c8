@@ -1,26 +1,27 @@
 
 ƒ
-java:S1488"fImmediately return this expression instead of assigning it to the temporary variable "productDtoFlux".(•«±Æ8íø­öÖ1
+java:S1488 "fImmediately return this expression instead of assigning it to the temporary variable "productDtoFlux".(•«±Æ8õ½ëÉ×1
 }
-java:S1488)"`Immediately return this expression instead of assigning it to the temporary variable "monoList".(îúÑ´8íø­öÖ1
+java:S1488/"`Immediately return this expression instead of assigning it to the temporary variable "monoList".(îúÑ´8ö½ëÉ×1
 ƒ
-java:S1488/"fImmediately return this expression instead of assigning it to the temporary variable "productDtoMono".(ÂÖ„Ì8îø­öÖ1
+java:S1488M"fImmediately return this expression instead of assigning it to the temporary variable "productDtoMono".(Áöü¬8ö½ëÉ×1
 ƒ
-java:S14889"fImmediately return this expression instead of assigning it to the temporary variable "productMonoDto".(Ê¯ïú8îø­öÖ1
-ˆ
-java:S1488H"fImmediately return this expression instead of assigning it to the temporary variable "productMonoDto".(£«µëÿÿÿÿÿ8îø­öÖ1
+java:S1488W"fImmediately return this expression instead of assigning it to the temporary variable "productMonoDto".(Ê¯ïú8ö½ëÉ×1
 ‚
-java:S1488P"`Immediately return this expression instead of assigning it to the temporary variable "voidMono".(ç¹ñäşÿÿÿÿ8îø­öÖ1
+java:S1488}"`Immediately return this expression instead of assigning it to the temporary variable "voidMono".(ç¹ñäşÿÿÿÿ8ö½ëÉ×1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8†¿öÖ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒ¾ëÉ×1
 Y
-java:S1854!"<Remove this useless assignment to local variable "fluxList".(¡òÖÂ8ıø­öÖ1
+java:S1854'"<Remove this useless assignment to local variable "fluxList".(¡òÖÂ8ˆ¾ëÉ×1
 t
-java:S6204 "RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¨é¶ëúÿÿÿÿ8şø­öÖ1
+java:S6204&"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(¨é¶ëúÿÿÿÿ8‰¾ëÉ×1
 J
-java:S1481!"-Remove this unused "fluxList" local variable.(¡òÖÂ8şø­öÖ1
+java:S1481'"-Remove this unused "fluxList" local variable.(¡òÖÂ8Š¾ëÉ×1
 o
-java:S6204("RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ÿø­öÖ1
-]	java:S125."<This block of commented-out lines of code should be removed.(íËÛ¸øÿÿÿÿ8€ù­öÖ1
-]	java:S125@"<This block of commented-out lines of code should be removed.(„‰³œşÿÿÿÿ8ù­öÖ1
-]	java:S125K"<This block of commented-out lines of code should be removed.(É °Ïøÿÿÿÿ8ƒù­öÖ1
+java:S6204."RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8‹¾ëÉ×1
+X	java:S125C"<This block of commented-out lines of code should be removed.(ÒËğŠ8Œ¾ëÉ×1
+]	java:S125L"<This block of commented-out lines of code should be removed.(íËÛ¸øÿÿÿÿ8¾ëÉ×1
+]	java:S125^"<This block of commented-out lines of code should be removed.(„‰³œşÿÿÿÿ8¾ëÉ×1
+f
+java:S1134d"DTake the required action to fix the issue indicated by this comment.(êƒÛÁûÿÿÿÿ8ÅŸÍË×1
+X	java:S125p"<This block of commented-out lines of code should be removed.(Õ—Á¹8÷´¡Ê×1

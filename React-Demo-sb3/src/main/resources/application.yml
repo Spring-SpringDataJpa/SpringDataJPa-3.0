@@ -14,3 +14,10 @@ spring:
     driver: r2dbc:h2:mem://testdb  # Use the R2DBC URL for H2
     username: sa
     password: password
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+        web-client-allow-remote-access: true

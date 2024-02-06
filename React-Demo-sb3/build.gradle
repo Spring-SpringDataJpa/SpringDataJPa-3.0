@@ -25,16 +25,28 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 
 	//spring-boot-starter-data-jpa' will suuport for reactivecrudrepository, use spring-boot-starter-data-r2dbc instead
-	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc:3.2.2'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+
+	// spring-boot-starter-data-jpa could conflict with  spring-boot-starter-data-r2dbc so removing
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 //	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb-reactive'
 //	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.12.2'
 
+
 	//For reactive we must use io.r2dbc:r2dbc-h2 instead of com.h2database:h2
+	//It won't give full h2 console access, you need to use
 	implementation 'io.r2dbc:r2dbc-h2'
-//	runtimeOnly 'com.h2database:h2'
-//	implementation  'com.h2database:h2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+
+	implementation 'org.springframework.boot:spring-boot-starter-h2'
+
+
+
+
+
+	runtimeOnly 'com.h2database:h2'
+	implementation  'com.h2database:h2'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

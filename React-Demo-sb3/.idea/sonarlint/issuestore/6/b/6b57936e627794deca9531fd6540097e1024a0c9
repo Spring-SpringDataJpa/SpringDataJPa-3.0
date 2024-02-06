@@ -1,15 +1,19 @@
 
 v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜ËÔö8ÚÃôóÖ1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜ËÔö8 úŸÅ×1
 v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏÅõã8ˆèõóÖ1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÏÅõã8¡úŸÅ×1
 {
-java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğà«Šıÿÿÿÿ8´ñûóÖ1
+java:S2293""YReplace the type specification in this constructor call with the diamond operator ("<>").(Ğà«Šıÿÿÿÿ8¡úŸÅ×1
 {
-java:S2293&"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸÌ£®üÿÿÿÿ8Îè°ôÖ1
-u
-java:S2293+"YReplace the type specification in this constructor call with the diamond operator ("<>").(±ËÑr8²æ¾ôÖ1
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸÌ£®üÿÿÿÿ8¡úŸÅ×1
 {
-java:S22930"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŒÕ³ÿÿÿÿÿ8ÒáÁôÖ1
+java:S2293,"YReplace the type specification in this constructor call with the diamond operator ("<>").(îğ•ªúÿÿÿÿ8¡úŸÅ×1
+{
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŒÕ³ÿÿÿÿÿ8¡úŸÅ×1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¾Ç¨öÖ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¹úŸÅ×1
+f
+java:S1134/"DTake the required action to fix the issue indicated by this comment.(çëñ¦øÿÿÿÿ8“ä×Ë×1
+f
+java:S11345"DTake the required action to fix the issue indicated by this comment.(¾èŞ°ıÿÿÿÿ8ºÆæË×1

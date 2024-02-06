@@ -10,6 +10,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/products")
@@ -19,7 +20,7 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/save")
-    public ResponseEntity<Mono<ProductDto>> saveProduct(Mono<ProductDto> productDtoMono) {
+    public ResponseEntity<Mono<ProductDto>> saveProduct(@RequestBody Mono<ProductDto> productDtoMono) {
         return new ResponseEntity<Mono<ProductDto>>(productService.saveProduct(productDtoMono), HttpStatus.CREATED);
     }
 
@@ -39,17 +40,19 @@ public class ProductController {
     }
 
     @GetMapping("/product-range")
-    public ResponseEntity<Mono<ProductDto>> getProductInRange(@RequestParam("min") double min, @RequestParam("max") double max) {
-        return new ResponseEntity<Mono<ProductDto>>(productService.getProductInRange(min, max), HttpStatus.CREATED);
+    public ResponseEntity<Flux<ProductDto>> getProductInRange(@RequestParam("min") double min, @RequestParam("max") double max) {
+        return new ResponseEntity<Flux<ProductDto>>(productService.getFluxOfProductsInRange(min, max), HttpStatus.CREATED);
     }
 
+    // FIXME not working as expected
     @PutMapping("/update/{id}")
-    public ResponseEntity<Mono<ProductDto>> updateProduct(@RequestBody Mono<ProductDto> productDtoMono, @PathVariable("id") Long id) {
+    public ResponseEntity<Mono<ProductDto>> updateProduct(@RequestBody Mono<ProductDto> productDtoMono, @PathVariable("id") UUID id) {
         return new ResponseEntity<Mono<ProductDto>>(productService.updateProduct(productDtoMono, id), HttpStatus.CREATED);
     }
 
+    //FIXME Not working as expected
     @DeleteMapping("/delete/{id}")
-    public Mono<Void> deleteProduct(@PathVariable("id") Long id) {
+    public Mono<Void> deleteProduct(@PathVariable("id") UUID id) {
         return productService.deleteProduct(id);
     }
 }
