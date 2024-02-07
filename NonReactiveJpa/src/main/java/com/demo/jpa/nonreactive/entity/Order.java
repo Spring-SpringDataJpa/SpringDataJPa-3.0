@@ -16,14 +16,47 @@ import java.util.List;
  *  One-to-Many  - Lazy
  *  Many-to-One - Eager
  *  Many-to-Many - Lazy
+ *
+ *  @Basic - Eager - It is used to put the annotation for fetch type on the individual elements of the entity.
+ *  @ElementCollection - LAZY - It works same as various relationshiops annotations, except that we cannot set relationships
+ *  and we cannot do joins on it manually, that means we doon't have control over joins ot unlike varous relationship
+ *  types mentioned above. We cannot do joins because it is taking care by Jpa and then hibernate behind the scene.
+ *  We can use @ElementCollection for any collection of primitive types such as String or Integer and for putting this annotatio
+ *  over collection types of any custom obejct types. That custom object has to have @Enbadable annotation marked on top of that
+ *  custom object class.
+ */
+
+/**
+ * With the help of entity graph we can gain access to FetchType property of each and every element of the entity
+ * and it's sub entity, that means related entities.
+ * @NamedEntityGraph represents the current entity (for which you are defining repository interface).
+ * @NamedSubgraph represents the related entity from the current entity.
+ *
  */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
 @Entity(name = "CustomerOrder")
-@NamedEntityGraph(name = "Order.orderItems",
-        attributeNodes = @NamedAttributeNode("orderItems"))
+@NamedEntityGraph(
+        name = "order-entity-graph-with-orderItems",
+        attributeNodes = {
+                @NamedAttributeNode("orderNumber"),
+                @NamedAttributeNode("orderDate"),
+                @NamedAttributeNode(value = "orderItems", subgraph = "orderItemsSubgraph"),
+        },
+        subgraphs = {
+                @NamedSubgraph(
+                        name = "orderItemsSubgraph",
+                        attributeNodes = {
+                                @NamedAttributeNode("productName"),
+                                @NamedAttributeNode("price"),
+                                @NamedAttributeNode("quantity"),
+                                @NamedAttributeNode("order")
+                        }
+                )
+        }
+)
 public class Order {
 
     @Id
