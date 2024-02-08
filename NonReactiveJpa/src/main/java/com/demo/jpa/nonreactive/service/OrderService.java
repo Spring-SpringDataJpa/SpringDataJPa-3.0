@@ -69,6 +69,7 @@ public class OrderService {
     }
 
     public OrderItem getOrderItemById(Long orderId, Long orderItemId) {
+
         return orderItemRepository.findByIdAndOrderId(orderItemId, orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("Order item not found with id: " + orderItemId + " in order with id: " + orderId));
     }

@@ -11,7 +11,29 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-@Entity (name = "Order_Item")
+@Entity(name = "Order_Item")
+@NamedEntityGraph(
+        name = "orderItem-entity-graph",
+        attributeNodes = {
+//                @NamedAttributeNode("id"), // no necessary as in many cases, the IDs are automatically fetched along with the entities when they are loaded from the database, so explicitly including them in the entity graph might not be necessary.
+                @NamedAttributeNode("productName"),
+                @NamedAttributeNode("price")
+//                , @NamedAttributeNode("quantity")
+//                , @NamedAttributeNode(value = "order", subgraph = "orderSubgraph")
+        }
+//        ,
+//        subgraphs = {
+//                @NamedSubgraph(
+//                        name = "orderSubgraph",
+//                        attributeNodes = {
+////                                @NamedAttributeNode("id"), // no necessary as in many cases, the IDs are automatically fetched along with the entities when they are loaded from the database, so explicitly including them in the entity graph might not be necessary.
+//                                @NamedAttributeNode("orderNumber"),
+//                                @NamedAttributeNode("orderDate"),
+//                                @NamedAttributeNode("orderItems")
+//                        }
+//                )
+//        }
+)
 public class OrderItem {
 
     @Id
@@ -31,7 +53,8 @@ public class OrderItem {
      * java.lang.StackOverflowError: null
      */
     @ManyToOne
-    @JoinColumn(name = "order_id") // This is the name of order column inside Order_Item table. We need to set each order explicitly on orderItems field of order entity
+//    @ManyToOne(fetch = FetchType.LAZY) // Default behaviour is eager for ManyToOne if you override fetch type to lazy, you will see two queries, else only one query in the console after enabling hibernate logs.
+//    @JoinColumn(name = "order_id") // This is the name of order column inside Order_Item table. We need to set each order explicitly on orderItems field of order entity
     @JsonIgnore
     private Order order;
 }

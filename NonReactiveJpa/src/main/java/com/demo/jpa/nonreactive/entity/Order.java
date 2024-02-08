@@ -73,7 +73,7 @@ public class Order {
     //mappedBy = "order", order is the field name of Order object inside OrderItem
     @OneToMany(
             mappedBy = "order", // This is the name of the Order type variable inside orderItem entity, since this is a bidirectional relationship
-
+            fetch = FetchType.EAGER,
             // cascade = CascadeType.ALL: If we perform any ooperation on order entity, that operation will also be cascaded to order item entity
             //such as PERSIST, MERGE, REMOVE, DETACH, REFRESH, ALL (This includes all of the above cascade options.)
             cascade = CascadeType.ALL,

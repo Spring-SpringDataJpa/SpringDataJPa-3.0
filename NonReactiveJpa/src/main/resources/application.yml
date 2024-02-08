@@ -22,3 +22,10 @@ spring:
     password: password
     url: jdbc:h2:mem:dev
     username: sa
+  jpa:
+    show-sql: true
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.sql: DEBUG
