@@ -11,7 +11,8 @@ import java.util.Optional;
 @Repository
 public interface OrderItemRepository extends JpaRepository<OrderItem, Long> {
 
-//    @EntityGraph(value = "Order.orderItems", type = EntityGraph.EntityGraphType.LOAD)
+//    @EntityGraph(value = "Order.orderItems", type = EntityGraph.EntityGraphType.L
+//    OAD)
 //    @EntityGraph(value = "order-entity-graph-with-orderItems", type = EntityGraph.EntityGraphType.LOAD)
 //    List<OrderItem> findByOrderId(Long orderId);
 
